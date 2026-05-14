@@ -4,6 +4,13 @@
 > Course: IS231 Web Technology | Project No. 2
 > TA: Samaa Mohamed | **Group No. 1**
 
+![Python](https://img.shields.io/badge/Python-3.x-3776AB?style=flat&logo=python&logoColor=white)
+![Django](https://img.shields.io/badge/Django-4.x-092E20?style=flat&logo=django&logoColor=white)
+![SQLite](https://img.shields.io/badge/Database-SQLite3-003B57?style=flat&logo=sqlite&logoColor=white)
+![HTML](https://img.shields.io/badge/Frontend-HTML%20%2F%20CSS-E34F26?style=flat&logo=html5&logoColor=white)
+![Status](https://img.shields.io/badge/Status-In%20Progress-yellow?style=flat)
+![License](https://img.shields.io/badge/License-Academic-blue?style=flat)
+
 ---
 
 ## 👥 Team Members
@@ -74,14 +81,14 @@ library_project/
 │   ├── views.py
 │   ├── urls.py
 │   └── templates/products/
-│       ├── Books.html          # Category listing (Doaa)
-│       ├── BookID.html         # Book details (Doaa)
-│       ├── Search.html         # Search bar (Sarah)
-│       ├── Borrow a Book.html  # Borrow form (Sarah)
-│       ├── Edit books details.html  # Edit form (Sarah)
-│       ├── add.html            # Add book (Zyad)
-│       ├── delete.html         # Delete book (Zyad)
-│       └── BorrowedBooks.html  # Borrowed/Available lists (Salma)
+│       ├── Books.html              # Category listing (Doaa)
+│       ├── BookID.html             # Book details (Doaa)
+│       ├── Search.html             # Search bar (Sarah)
+│       ├── Borrow a Book.html      # Borrow form (Sarah)
+│       ├── Edit books details.html # Edit form (Sarah)
+│       ├── add.html                # Add book (Zyad)
+│       ├── delete.html             # Delete book (Zyad)
+│       └── BorrowedBooks.html      # Borrowed/Available lists (Salma)
 │
 ├── library/                # Project settings & main URLs
 │   ├── settings.py
@@ -122,6 +129,26 @@ library_project/
 |-------|------|-------------|
 | `user` | OneToOneField | Link to Django's built-in User |
 | `is_admin` | BooleanField | Admin privileges flag |
+
+---
+
+## 🔗 URL Endpoints
+
+| Method | URL | Description | Access |
+|--------|-----|-------------|--------|
+| GET | `/` | Home page | Public |
+| GET | `/accounts/signup/` | Register new user | Public |
+| GET/POST | `/accounts/login/` | User login | Public |
+| GET | `/accounts/logout/` | User logout | Authenticated |
+| GET | `/products/` | All books listing | Public |
+| GET | `/products/<id>/` | Book detail page | Public |
+| GET | `/products/category/<name>/` | Books by category | Public |
+| GET | `/products/search/` | Search books | Public |
+| POST | `/products/borrow/<id>/` | Borrow a book | Authenticated |
+| GET | `/products/borrowed/` | Borrowed books list | Admin |
+| GET/POST | `/products/add/` | Add new book | Admin |
+| GET/POST | `/products/edit/<id>/` | Edit book details | Admin |
+| POST | `/products/delete/<id>/` | Delete a book | Admin |
 
 ---
 
@@ -172,6 +199,23 @@ Then open your browser at: **http://127.0.0.1:8000/**
 | Frontend | HTML, CSS |
 | Database | SQLite3 |
 | Media | Pillow (image handling) |
+
+---
+
+## 🗺️ Roadmap
+
+- [x] User authentication (Sign Up / Login)
+- [x] Home page & navbar
+- [x] Book categories & details
+- [x] Search functionality
+- [x] Borrow system
+- [x] Admin dashboard (Add / Edit / Delete)
+- [x] Borrowed & available books lists
+- [ ] Return book functionality
+- [ ] Email notifications on borrow/return
+- [ ] User profile page
+- [ ] Book ratings & reviews
+- [ ] Responsive mobile design
 
 ---
 
