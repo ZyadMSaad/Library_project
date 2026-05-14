@@ -1,0 +1,197 @@
+body {
+    background-color: #fdf6ec;
+    color: #33200a;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+label {
+    font-weight: bold;
+    font-size: 20px;
+    color: rgb(207, 135, 83);
+}
+a {
+    color: inherit !important;
+    text-decoration: none !important;
+}
+
+button {
+    /* background-color: rgb(170, 105, 55); */
+        background-color: rgb(236, 181, 78);
+
+    color: white;
+    border: none;
+    padding: 5px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100px;
+    font-size: 16px;
+    font-weight: bold;
+}
+button:hover {
+     background-color: rgb(124, 77, 40);
+}
+
+#navbar {
+    margin-left: 20px;
+}
+.books-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 30px;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.book-card {
+    background: #fffaf4;
+    border-radius: 12px;
+    border: 1px solid #e8d5be;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 200px;
+}
+.book-title {
+    font-size: 20px;
+    font-weight: 500;
+    color: #33200a;
+    margin: 0;
+}
+.book-category {
+    font-size: 15px;
+    color: #7a5c3a;
+    margin: 0;
+}
+.borrow-btn {
+    display: block;
+    text-align: center;
+    /* background: rgb(170, 105, 55); */
+    background: rgb(170, 105, 55);
+
+    color: white;
+    padding: 8px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 14px;
+    margin-top: auto;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    box-sizing: border-box;
+}
+.borrow-btn:hover {
+    /* background: rgb(124, 77, 40); */
+    background: rgb(223, 161, 114);
+    color: white;
+
+}
+.book-image{
+border-radius: 10px;
+
+height: 300px;
+width: 200px;
+box-shadow: 0 5px 10px rgba(0,0,0,0.6);
+object-fit: cover;
+}
+.Borrowed{
+    display: block;
+    text-align: center;
+    background:#a32d2d;
+    color: white;
+    padding: 8px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 14px;
+    margin-top: auto;
+    border: none;
+    width: 100%;
+    box-sizing: border-box;
+
+}
+.details_link{
+display: block;
+    text-align: center;
+    color: rgb(106, 72, 72);
+    padding: 8px;
+    text-decoration: underline;
+    font-size: 14px;
+    margin-top: auto;
+
+}
+.details_link:hover {
+    color: rgb(197, 93, 13);
+}
+
+.tabimg{
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.book-details{
+border-radius: 10px;
+margin: 100px 300px 200px 300px;
+display:flex;
+    flex-direction: row;
+    justify-content: center;
+ gap:10px;
+ max-width: 1000px;
+ align-items:center;
+ background: #fffaf4;
+    border-radius: 12px;
+    border: 1px solid #e8d5be;
+width: 900px;
+}
+
+.tabimg {
+    display: flex;              
+    flex-direction: row;       
+    gap: 20px;                 
+    align-items: flex-start;   
+}
+
+.image-details {
+    border-radius: 10px;
+    width: 300px;              
+    height: auto;           
+    object-fit: cover;
+
+}
+
+.tab-text {
+    display: flex;
+    flex-direction: column;    
+    gap: 10px;              
+}
+.Borrowed__details{
+      background-color: rgb(170, 105, 55);
+    color: white;
+    border: none;
+    padding: 5px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100px;
+    font-size: 16px;
+    font-weight: bold;
+}
+.borrow-btn2 {
+    display: block;
+    text-align: center;
+    background: rgb(170, 105, 55);
+    color: white;
+    padding: 8px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 14px;
+    margin-top: auto;
+    border: none;
+    width: 300px;
+    box-sizing: border-box;
+    margin-left:50px;
+}
+.borrow-btn2:hover {
+    background: rgb(223, 161, 114);
+}

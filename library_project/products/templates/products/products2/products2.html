@@ -1,0 +1,40 @@
+{% load static %}
+{% include 'home/parts/navbar.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books</title>
+        <link rel="stylesheet" href="{% static 'CSS/nav.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/categoryall.css' %}" />
+</head>
+<body>
+    <div class="books-grid">
+        {% for x in pro %} 
+        <div class="book-card">
+            {% if x.image %}
+            <img src="{{ x.image.url }}" alt="{{ x.name }}" class="book-image">
+        {% endif %}
+            <p class="book-title">{{ x.name }}</p>
+            <p class="book-category">Category: {{ x.category }}</p>
+            {% if not user.profile.is_admin %}
+            {% if x.borrowed %}
+             <button class="Borrowed">Borrowed</button>
+            {% else %}
+            <a href="{% url 'borrow' x.id %}">
+            <button class="borrow-btn">Borrow Now</button>
+            </a>
+        {% endif %}
+             <a href="{% url 'product2' x.id%}" class="details_link">View Details</a>
+
+            {% endif %}
+ {% if user.is_authenticated and user.profile.is_admin %}
+       <a href="{% url 'edit' book_id=x.id %}"><button class="borrow-btn">Edit</button></a>
+    <a href="{% url 'delete_product' %}"><button class="Borrowed">Delete</button></a>
+    {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

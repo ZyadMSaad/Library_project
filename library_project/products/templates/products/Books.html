@@ -1,0 +1,42 @@
+{% load static %} 
+{% include 'home/parts/navbar.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <link rel="stylesheet" href="{% static 'CSS/nav.css' %}">
+
+</head>
+<body>
+    {% block content %}
+    <div style="background-color: #fdf6ec; min-height: 100vh; padding: 50px 10% ; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+    
+    <h1 style="color: #c48d5f; text-align: center; margin-bottom: 80px; text-transform: uppercase; font-size: 2.2rem; font-weight: bold;">
+        Available books :-
+    </h1>
+    
+    <table Border="3" style="background-color: rgb(255, 248, 195);border-color: chocolate;text-align: center;margin: auto; width: 700 ; height: 100;" >
+        <tr>
+            <th style="color: maroon;text-align: center;">Book name </th>
+            <th style="color: maroon;text-align: center;">Book ID </th>
+            <th style="color: maroon;text-align: center;">Category of book </th>
+            <th style="color: maroon;text-align: center;">Author </th>
+            <th style="color: maroon;text-align: center;">Description </th>
+        </tr>
+
+        {% for x in books %}
+            <tr>
+            <td> {{ x.name }} </td>
+            <td> {{ x.book_id }} </td>
+            <td> {{ x.category }} </td>
+            <td> {{ x.author }} </td>
+            <td> {{ x.description }} </td>
+          </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock content %}
+</body>
+</html>

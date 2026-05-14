@@ -1,0 +1,44 @@
+{% load static %}
+{% include 'home/parts/navbar.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    
+    <link rel="stylesheet" href="{% static 'CSS/nav.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/signup_and_login.css' %}">
+</head>
+<body>
+
+    <div id="navbar"></div>
+
+<br><br>
+
+    {% if messages %}
+    {% for message in messages %}
+        <p style="color:green; border:1px solid green; padding:10px; border-radius:5px;"><strong>{{ message }}</strong></p>
+    {% endfor %}
+    {% endif %}
+
+    <h1>Login</h1>
+
+    <form action="/login/" method="POST">
+    {% csrf_token %}
+        
+        <label for="username">Username:</label><br>
+       <input type="text" id="username" name="username" minlength="4" maxlength="16" placeholder = "Username" required><br>
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" minlength = "6" maxlength="16" placeholder = "Password" required><br>
+        {% if error %}
+        <p style="color:red;">{{ error }}</p>
+        {% endif %}
+        <button type="submit" id="loginBtn">Login</button>
+    </form>
+
+    <p>Don't have an account? <a href="/signup/">Sign up here</a></p>
+
+</body>
+</html>

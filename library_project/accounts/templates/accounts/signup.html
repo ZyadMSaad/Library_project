@@ -1,0 +1,57 @@
+{% load static %}
+{% include 'home/parts/navbar.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    
+    <link rel="stylesheet" href="{% static 'CSS/nav.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/signup_and_login.css' %}">
+</head>
+<body>
+
+   <div id="navbar"></div>
+
+<br><br>
+
+    <h1>Sign Up</h1>
+
+    <form action="/signup/" method="POST">
+    {% csrf_token %}
+
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username" value = "{{username}}" minlength="4" maxlength="16" placeholder="Username" required><br>
+        <small>Username must be at least 4 characters and at most 16</small><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" value ="{{email}}" placeholder="example@email.com" required><br><br>
+
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" minlength="6" maxlength="16" placeholder="Password" required><br>
+        <small>Password must be at least 6 characters and at most 16</small><br><br>
+
+        <label for="confirm_password">Confirm Password:</label><br>
+        <input type="password" id="confirm_password" name="confirm_password" minlength="6" maxlength="16" placeholder="Confirm Password" required><br>
+        <small>Password must be at least 6 characters and at most 16</small>
+
+        <p>Register as:</p>
+        <input type="radio" id="user" name="is_admin" value="false" checked>
+        <label for="user">User</label><br>
+
+        <input type="radio" id="admin" name="is_admin" value="true">
+        <label for="admin">Admin</label><br><br>
+
+        {% if error %}
+        <p style="color:red;">{{ error }}</p>
+        {% endif %}
+        <button type="submit" id="signupBtn">Sign Up</button>
+
+    </form>
+
+    <p>Already have an account? <a href="/login/">Login here</a></p>
+
+</body>
+</html>

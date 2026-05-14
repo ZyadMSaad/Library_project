@@ -1,0 +1,38 @@
+{% load static %}
+{% include 'home/parts/navbar.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books</title>
+        <link rel="stylesheet" href="{% static 'CSS/nav.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/categoryall.css' %}" />
+</head>
+<body>
+    <div class="book-details">
+        {% if book.image %}
+        <div class="tabimg">   
+            <img src="{{ book.image.url }}" alt="{{ book.name }}" class="image-details">
+
+            <div class="tab-text">
+                <h2>Book Details</h2>
+                <p> Title: {{ book.name }}</p>
+                <p> Author: {{ book.author }}</p>
+                <p>Category:{{ book.category }} </p>   
+                <p> Language: {{ book.language }}</p>       
+                <p> Description: {{ book.description }}</p>   
+                
+                {% if book.borrowed %}
+                    <button class="Borrowed2">Borrowed</button>
+                {% else %}
+                    <a href="{% url 'borrow' book.id %}">
+                        <button class="borrow-btn2">Borrow Now</button>
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>

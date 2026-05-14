@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<style>
+body {
+  background-image: url("{% static 'images/Background.jpg' %}");
+}
+</style>
+
+<link rel="stylesheet" href="{% static 'CSS/Home.css' %}">
+
+<br><br>
+
+<h1>Welcome to Our Online Library !</h1>
+
+<p>
+This library website helps you explore a collection of books easily.<br>
+Discover your favorite book or dive into new topics.<br>
+Wish you enjoy your experience exploring the library.
+</p>
+
+<h2>What can you do ?</h2>
+
+<ul>
+  <li>Search for books by title, author, or category.</li>
+  <li>Browse the list of available books.</li>
+  <li>View book details.</li>
+  <li>Borrow available books.</li>
+  <li>View your borrowed books.</li>
+</ul>
+
+<br><br><br><br><br>
+
+<div id="search-box">
+  <!-- <input id="homeSearchInput" type="text" placeholder="Search by title or author or even category" />
+  <button onclick="goToSearch()">Search →</button> -->
+
+<form method="POST" action="{% url 'SearchForBooks' %}">
+    {% csrf_token %}
+    <input id="homeSearchInput" type="text" name="toSearch" placeholder="Search by title, author, or category" />
+    <button type="submit">Search →</button>
+</form>
+</div>
+<br><br><br>
+
+<hr><hr>
+
+<h2>✨ Trending Books ✨</h2>
+
+<div class="container">
+
+  <div class="book">
+    <img src="{% static 'images/7 Habits Of Highly Effective People_ Powerful Lessons In Personal Change.jfif' %}">
+  </div>
+
+  <div class="book">
+    <img src="{% static 'images/Rich Dad Poor Dad.jfif' %}">
+  </div>
+
+  <div class="book">
+    <img src="{% static 'images/Thinking, Fast And Slow.jfif' %}">
+  </div>
+
+  <div class="book">
+    <img src="{% static 'images/harry_potter.jfif' %}">
+  </div>
+
+  <div class="book">
+    <img src="{% static 'images/Zero To One & Paperback.jfif' %}">
+  </div>
+
+</div>
+
+<br>
+<hr><hr>
+
+<br><br>
+
+<div id="contact">
+  <a href="tel:01153785860">Contact with us 📞</a>
+  <a href="mailto:hanyda530@gmail.com">Mail us 📧</a>
+  <a href="#">How to use the website</a>
+  <h2>Thanks for using our website</h2>
+</div>
+
+
+<script>
+  function goToDetails(page) {
+    window.location.href = page;
+  }
+
+ 
+
+</script>
+
+{% endblock content %}

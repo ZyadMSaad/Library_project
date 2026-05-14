@@ -1,0 +1,104 @@
+body{
+    background-repeat: no-repeat;
+    background-position: 50% 8%;
+    background-size: 1200px 650px;
+    background-attachment: scroll;
+    background-color: #fdf6ec;
+    margin: 0;
+}
+
+h1 , h2 , p , ul {
+    text-align: center;             
+    font-size: 20px; 
+    list-style-position: inside;
+    font-style: italic;
+}
+
+h1 , h2 {
+    font-size: 35px;
+    margin-top: 50px;
+    color: rgb(207, 135, 83); 
+}
+
+p , ul {
+    font-size: 30px;
+    margin-top: 40px;
+    color: moccasin; 
+}
+
+input[type="text"] {
+  width: 400px;
+  padding: 10px 15px;
+  font-size: 18px;
+  border: 2px solid rgb(207, 135, 83);
+  border-radius: 80px;
+}
+
+#search-box {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+#search-box button {
+  color: black;
+  background-color: moccasin;
+  border: 2px solid rgb(207, 135, 83);
+  padding: 10px 20px;
+  font-size: 20px;
+  border-radius: 80px;
+  cursor: pointer;
+}
+
+#search-box button:hover ,
+#search-box button:active {
+  background-color: rgb(207, 135, 83);
+  border-color: moccasin;
+}
+
+.container {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+}
+
+.book {
+  position: relative;
+  width: 200px;
+}
+
+.book img {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background-color: rgb(207, 135, 83);
+}
+
+#contact a {
+  display: inline-block;
+  padding: 12px 20px;
+  background-color: moccasin;
+  color: black;
+  border: 2px solid rgb(207, 135, 83);
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 18px;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+#contact a:hover,
+#contact a:active {
+  background-color: rgb(207, 135, 83);
+  color: white;
+  cursor: pointer;
+}
+
+#navbar {
+  margin-right: 25px;
+}

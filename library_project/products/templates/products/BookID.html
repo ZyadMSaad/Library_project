@@ -1,0 +1,11 @@
+<!doctype html>
+<body>
+  <form method="POST">
+    {% csrf_token %}
+    <label for="Id">ID:</label>
+    <input type="text" name="Id" id="Id" /><br /><br />
+    <hr />
+    <a href="borrow"><button type="submit">Borrow</button></a>
+    <p>{{book.name}}</p>
+  </form>
+</body>

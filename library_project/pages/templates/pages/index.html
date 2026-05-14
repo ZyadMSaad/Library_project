@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+<form id="addBookForm" method="POST" action="{% url 'products' %}">
+    {% csrf_token %}
+    
+    <h2>TO ADD BOOK</h2>
+
+    <div class="form-group">
+        <label for="book">book name:</label>
+        <input id="book" name="name" type="text" class="form-control" required>
+    </div>
+
+    <div class="form-group">
+        <label for="bookID">Book ID:</label>
+        <input type="number" id="bookID" name="book_id" class="form-control" required>
+    </div>
+
+    <div class="form-group">
+        <label for="bookCategory">Category of book:</label>
+        <select name="category" id="bookCategory" class="form-control">
+            <option value="fantase">fantase</option>
+            <option value="romance">romance</option>
+            <option value="Action">Action</option>
+            <option value="History">History</option>
+            <option value="Religious">Religious</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="authorName">Author:</label>
+        <input type="text" id="authorName" name="author" class="form-control" required>
+    </div>
+
+    <div class="form-group">
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" class="form-control"></textarea>
+    </div>
+
+    <input type="submit" value="Submit" class="btn-submit">
+</form>
+
+<hr style="border-color: #444; margin: 40px 0;">
+
+<h2 style="text-align: center; color: #d4a373;">Current Library Inventory</h2>
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 20px;">
+    {% for x in pro %}
+        <div style="background-color: #262626; color: white; padding: 20px; border-radius: 12px; width: 250px; box-shadow: 0 5px 15px rgba(0,0,0,0.5); border: 1px solid #333;">
+            <h3 style="color: #d4a373; margin-top: 0;">{{ x.name }}</h3>
+            <p style="font-size: 0.9em; margin: 5px 0;"><strong>ID:</strong> {{ x.book_id }}</p>
+            <p style="font-size: 0.9em; margin: 5px 0;"><strong>Author:</strong> {{ x.author }}</p>
+            <p style="font-size: 0.9em; margin: 5px 0;"><strong>Category:</strong> {{ x.category }}</p>
+        </div>
+    {% empty %}
+        <p style="color: #888;">No books added to the database yet.</p>
+    {% endfor %}
+</div>
+
+<script src="{% static 'js/style.js' %}"></script>
+{% endblock content %}

@@ -1,0 +1,42 @@
+{% load static %} 
+{% include 'home/parts/navbar.html' %}
+ {% block content %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Borrow A Book</title>
+    <!--<link rel="stylesheet" href="nav.css" />-->
+    <link rel="stylesheet" href="{% static 'CSS/borrow.css' %}" />
+    <link rel="stylesheet" href="{% static 'CSS/nav.css' %}">
+  </head>
+  <body>
+
+    <br /><br />
+    <h1>Borrow A Book</h1>
+
+    <form method="POST" action="{% url 'BorrowedBooks' book.id %}"   >
+      {% csrf_token %}
+      <label for="borrowerName">Borrower Name:</label>
+      <input type="text" name="borrowerName" id="borrowerName" required />
+      <br /><br />
+      <hr />
+
+      <label for="borrowDate">Date:</label>
+      <input type="date" name="borrowDate" id="borrowDate" required/><br /><br />
+      <hr />
+
+      <label for="returnDate">Return Date:</label>
+      <input type="date" name="returnDate" id="returnDate" required /><br /><br />
+      <hr />
+
+      <label for="borrowerId">Borrower ID:</label>
+      <input type="text" name="borrowerId" id="borrowerId" required /><br /><br />
+      <hr />
+
+      <button type="submit" >Borrow</button>
+    </form>
+
+    <!--<script src="nav.js" defer></script>-->
+  </body>
+</html>
+{% endblock content %}

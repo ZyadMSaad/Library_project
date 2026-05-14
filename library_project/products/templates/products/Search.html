@@ -1,0 +1,59 @@
+{% load static %}
+{% include 'home/parts/navbar.html' %}
+ {% block content %}
+<!doctype html>
+<html>
+  <head>
+    <title>Search</title>
+    <!--<link rel="stylesheet" href="nav.css" />-->
+    <link rel="stylesheet" href="{% static 'CSS/search.css' %}" />
+    <link rel="stylesheet" href="{% static 'CSS/nav.css' %}">
+
+  </head>
+  <body>
+    <div id="navbar"></div>
+    <form method="POST">
+      {% csrf_token %}
+      <br /><br />
+      <h1>Search</h1>
+      <input
+        id="toSearch"
+        name="toSearch"
+        type="text"
+        placeholder="Search by title or author or category"
+      />
+      <button type="submit">Search</button><br />
+    </form>
+
+    {% if toSearch %}
+    <p>Searching for: <strong>{{ toSearch }}</strong></p>
+
+    <table id="booksTable">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Author</th>
+          <th>Category</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for book in results %}
+        <tr>
+          <td>{{ book.name }}</td>
+          <td>{{ book.author }}</td>
+          <td>{{ book.category }}</td>
+        </tr>
+        {% empty %}
+        <tr>
+          <td colspan="3">No books match your search.</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% endif %}
+
+    <!--<script src="nav.js" defer></script>-->
+    <!--<script src="bookdetils.js"></script>-->
+  </body>
+</html>
+{% endblock content %}
