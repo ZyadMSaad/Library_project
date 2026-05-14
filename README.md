@@ -10,12 +10,12 @@
 
 | Name | ID | Section | Responsible For |
 |------|:--:|:-------:|----------------|
-| 👑 **Haneen Ayman Mohammed** *(Leader)* | 20240174 | S12 | 🏠 Home Page & Navbar |
-| 📂 **Doaa Hany Abd El Rahman** | 20240180 | S12 | 🗂️ Categories, Book Details & Admin: Manageable Categories |
-| 📋 **Salma Mohsen Sayed** | 20240237 | S12 | ✅ Admin: List of Borrowed Books & List of Available Books |
-| ✏️ **Sarah Mohamed Salah El-Din** | 20242150 | S12 | 🔍 Edit Form, Borrow Form & Search Bar |
-| ⚙️ **Zyad Mohammed Saad** | 20242144 | S12 | ➕ Admin: Add & Delete Forms |
-| 🔐 **Basel Mohammed Abd El Hakim** | 20240112 | S11 | 🔑 Sign Up & Login |
+|  **Haneen Ayman Mohammed** *(Leader)* | 20240174 | S12 | 🏠 Home Page & Navbar |
+|  **Doaa Hany Abd El Rahman** | 20240180 | S12 | 🗂️ Categories, Book Details & Admin: Manageable Categories |
+|  **Salma Mohsen Sayed** | 20240237 | S12 | ✅ Admin: List of Borrowed Books & List of Available Books |
+|  **Sarah Mohamed Salah El-Din** | 20242150 | S12 | 🔍 Edit Form, Borrow Form & Search Bar |
+|  **Zyad Mohammed Saad** | 20242144 | S12 | ➕ Admin: Add & Delete Forms |
+|  **Basel Mohammed Abd El Hakim** | 20240112 | S11 | 🔑 Sign Up & Login |
 
 ---
 
